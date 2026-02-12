@@ -115,3 +115,33 @@ int main()
 
     return 0;
 }
+#include <stdio.h>
+
+int main()
+{
+    int m1, m2, m3, m4;
+    int total;
+    float avg;
+
+    printf("Enter marks of 4 subjects:\n");
+    scanf("%d %d %d %d", &m1, &m2, &m3, &m4);
+
+    total = m1 + m2 + m3 + m4;
+    avg = total / 4.0;
+
+    printf("Total Marks = %d\n", total);
+    printf("Average = %.2f\n", avg);
+
+    if(avg > 75)
+        printf("Grade: DISTINCTION");
+    else if(avg >= 60)
+        printf("Grade: FIRST CLASS");
+    else if(avg >= 50)
+        printf("Grade: SECOND CLASS");
+    else if(avg >= 40)
+        printf("Grade: THIRD CLASS");
+    else
+        printf("Grade: FAIL");
+
+    return 0;
+}
