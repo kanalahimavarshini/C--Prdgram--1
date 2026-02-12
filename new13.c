@@ -31,3 +31,14 @@ int main()
         printf("root2 is %.3f-i%.3f\n",real,imag);    
     }
 }
+#include <stdio.h>
+int main()
+{
+    int a=6,b=8,temp;
+    scanf("%d %d";&a,&b);
+    temp=0;
+    a=b;
+    b=temp;
+    printf("%d %d",a,b);
+    return 0;
+}
