@@ -42,3 +42,23 @@ int main()
     printf("%d %d",a,b);
     return 0;
 }
+   #include <stdio.h>
+
+int main()
+{
+    int N, i;
+    int sum = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &N);
+
+    for(i = 1; i <= N; i++)
+    {
+        sum = sum + i;
+    }
+
+    printf("Sum of numbers from 1 to %d is %d", N, sum);
+
+    return 0;
+}
+ 
