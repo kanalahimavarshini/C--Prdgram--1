@@ -149,3 +149,82 @@ int main() {
         }
     }
 }
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+// C-style structure
+struct CRoom {
+    int roomNumber;
+    char customerName[50];
+    int isBooked;
+};
+
+// C++ Class (Java-like OOP)
+class RoomBookingSystem {
+private:
+    CRoom rooms[5];
+
+public:
+    RoomBookingSystem() {
+        for(int i = 0; i < 5; i++) {
+            rooms[i].roomNumber = i + 1;
+            rooms[i].isBooked = 0;
+            strcpy(rooms[i].customerName, "");
+        }
+    }
+
+    void viewRooms() {
+        cout << "\nRoom Status:\n";
+        for(int i = 0; i < 5; i++) {
+            if(rooms[i].isBooked)
+                cout << "Room " << rooms[i].roomNumber 
+                     << " - Booked by " << rooms[i].customerName << endl;
+            else
+                cout << "Room " << rooms[i].roomNumber 
+                     << " - Available\n";
+        }
+    }
+
+    void bookRoom() {
+        int roomNo;
+        cout << "Enter room number (1-5): ";
+        cin >> roomNo;
+
+        if(roomNo < 1 || roomNo > 5) {
+            cout << "Invalid room number!\n";
+            return;
+        }
+
+        if(rooms[roomNo-1].isBooked) {
+            cout << "Room already booked!\n";
+        } else {
+            cout << "Enter customer name: ";
+            cin >> rooms[roomNo-1].customerName;
+            rooms[roomNo-1].isBooked = 1;
+            cout << "Room booked successfully!\n";
+        }
+    }
+};
+
+// Main function (C style)
+int main() {
+    RoomBookingSystem system;
+    int choice;
+
+    while(true) {
+        cout << "\n--- Room Booking Management System ---\n";
+        cout << "1. View Rooms\n";
+        cout << "2. Book Room\n";
+        cout << "3. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch(choice) {
+            case 1: system.viewRooms(); break;
+            case 2: system.bookRoom(); break;
+            case 3: return 0;
+            default: cout << "Invalid choice!\n";
+        }
+    }
+}
