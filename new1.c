@@ -82,3 +82,70 @@ int main() {
         }
     }
 }
+#include <iostream>
+using namespace std;
+
+class Room {
+public:
+    int roomNumber;
+    string customerName;
+    bool isBooked;
+
+    Room() {
+        isBooked = false;
+    }
+};
+
+int main() {
+    Room rooms[5];
+    int choice, roomNo;
+
+    for(int i = 0; i < 5; i++) {
+        rooms[i].roomNumber = i + 1;
+    }
+
+    while(true) {
+        cout << "\n--- Room Booking Management System ---\n";
+        cout << "1. View Rooms\n";
+        cout << "2. Book Room\n";
+        cout << "3. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch(choice) {
+
+            case 1:
+                for(int i = 0; i < 5; i++) {
+                    if(rooms[i].isBooked)
+                        cout << "Room " << rooms[i].roomNumber 
+                             << " - Booked by " << rooms[i].customerName << endl;
+                    else
+                        cout << "Room " << rooms[i].roomNumber 
+                             << " - Available\n";
+                }
+                break;
+
+            case 2:
+                cout << "Enter room number (1-5): ";
+                cin >> roomNo;
+
+                if(roomNo < 1 || roomNo > 5)
+                    cout << "Invalid room number!\n";
+                else if(rooms[roomNo-1].isBooked)
+                    cout << "Room already booked!\n";
+                else {
+                    cout << "Enter customer name: ";
+                    cin >> rooms[roomNo-1].customerName;
+                    rooms[roomNo-1].isBooked = true;
+                    cout << "Room booked successfully!\n";
+                }
+                break;
+
+            case 3:
+                return 0;
+
+            default:
+                cout << "Invalid choice!\n";
+        }
+    }
+}
