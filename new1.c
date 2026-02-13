@@ -228,3 +228,27 @@ int main() {
         }
     }
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Booking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Room Booking Management System</h2>
+
+    <form action="BookingServlet" method="post">
+        <label>Customer Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Room Number (1-5):</label>
+        <input type="number" name="room" min="1" max="5" required>
+
+        <button type="submit">Book Room</button>
+    </form>
+</div>
+
+</body>
+</html>
