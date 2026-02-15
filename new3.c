@@ -91,3 +91,6 @@ while(condition) {
     // statements
     increment/decrement;
 }
+for(initialization; condition; increment/decrement) {
+    // statements
+}
