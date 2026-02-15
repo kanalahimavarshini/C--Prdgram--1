@@ -86,3 +86,8 @@ int main() {
 
     return 0;
 }
+initialization;
+while(condition) {
+    // statements
+    increment/decrement;
+}
