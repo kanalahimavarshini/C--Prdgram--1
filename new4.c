@@ -30,3 +30,17 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    float num1, num2, result;
+
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+
+    result = num1 / num2;
+
+    printf("Result = %.2f", result);
+
+    return 0;
+}
