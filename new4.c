@@ -77,3 +77,23 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+float divide(float x, float y) {
+    return x / y;
+}
+
+int main() {
+    float a, b;
+
+    printf("Enter two numbers: ");
+    scanf("%f %f", &a, &b);
+
+    if (b == 0) {
+        printf("Division by zero is not allowed.");
+    } else {
+        printf("Result = %.2f", divide(a, b));
+    }
+
+    return 0;
+}
