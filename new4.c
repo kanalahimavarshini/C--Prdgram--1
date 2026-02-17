@@ -135,3 +135,24 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int arr[5], i, sum = 0;
+    int *p;
+
+    printf("Enter 5 numbers:\n");
+    for(i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    p = arr;   // pointer to first element
+
+    for(i = 0; i < 5; i++) {
+        sum += *(p + i);
+    }
+
+    printf("Sum = %d\n", sum);
+
+    return 0;
+}
