@@ -29,3 +29,18 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    float num;
+
+    printf("Enter a number: ");
+    scanf("%f", &num);
+
+    if (num == (int)num)
+        printf("It is an integer.\n");
+    else
+        printf("It is not an integer.\n");
+
+    return 0;
+}
