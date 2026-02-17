@@ -44,3 +44,20 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int arr[5];
+    int i, count = 0;
+
+    printf("Enter 5 integers:\n");
+
+    for(i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+        count++;
+    }
+
+    printf("Total integers entered = %d\n", count);
+
+    return 0;
+}
