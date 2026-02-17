@@ -97,3 +97,18 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int *p;
+
+    p = &a;   // pointer stores address of a
+
+    printf("Value of a = %d\n", a);
+    printf("Address of a = %p\n", &a);
+    printf("Pointer value (address) = %p\n", p);
+    printf("Value using pointer = %d\n", *p);
+
+    return 0;
+}
