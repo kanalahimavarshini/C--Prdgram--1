@@ -156,3 +156,25 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int arr[5], i;
+    int *p, max;
+
+    printf("Enter 5 numbers:\n");
+    for(i = 0; i < 5; i++)
+        scanf("%d", &arr[i]);
+
+    p = arr;
+    max = *p;
+
+    for(i = 1; i < 5; i++) {
+        if(*(p + i) > max)
+            max = *(p + i);
+    }
+
+    printf("Largest number = %d\n", max);
+
+    return 0;
+}
