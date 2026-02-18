@@ -190,3 +190,52 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+void deleteNode(struct Node **head, int key) {
+    struct Node *temp = *head, *prev = NULL;
+
+    // If head node holds the key
+    if (temp != NULL && temp->data == key) {
+        *head = temp->next;
+        free(temp);
+        return;
+    }
+
+    // Search for the key
+    while (temp != NULL && temp->data != key) {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    if (temp == NULL) {
+        printf("Value not found\n");
+        return;
+    }
+
+    prev->next = temp->next;
+    free(temp);
+}
+
+void display(struct Node *head) {
+    while (head != NULL) {
+        printf("%d -> ", head->data);
+        head = head->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    struct Node *head = NULL, *newNode, *temp;
+    int n, i, value;
+
+    printf("How many nodes? ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i+
