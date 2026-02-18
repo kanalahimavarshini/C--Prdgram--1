@@ -251,3 +251,39 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+void insertBeginning(struct Node **head, int value) {
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+
+    newNode->data = value;
+    newNode->next = *head;   // point to old head
+    *head = newNode;        // update head
+}
+
+void display(struct Node *head) {
+    while(head != NULL) {
+        printf("%d -> ", head->data);
+        head = head->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    struct Node *head = NULL;
+
+    insertBeginning(&head, 30);
+    insertBeginning(&head, 20);
+    insertBeginning(&head, 10);
+
+    printf("Linked List:\n");
+    display(head);
+
+    return 0;
+}
