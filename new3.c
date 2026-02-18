@@ -94,3 +94,58 @@ while(condition) {
 for(initialization; condition; increment/decrement) {
     // statements
 }
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+void reverse(struct Node **head) {
+    struct Node *prev = NULL, *current = *head, *next = NULL;
+
+    while (current != NULL) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    *head = prev;
+}
+
+void display(struct Node *head) {
+    while (head != NULL) {
+        printf("%d -> ", head->data);
+        head = head->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    struct Node *head = NULL, *newNode, *temp;
+    int n, i;
+
+    printf("How many nodes? ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        newNode = (struct Node*)malloc(sizeof(struct Node));
+        scanf("%d", &newNode->data);
+        newNode->next = NULL;
+
+        if(head == NULL)
+            head = temp = newNode;
+        else {
+            temp->next = newNode;
+            temp = newNode;
+        }
+    }
+
+    reverse(&head);
+
+    printf("Reversed List:\n");
+    display(head);
+
+    return 0;
+}
