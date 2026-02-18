@@ -69,3 +69,18 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int (*funcPtr)(int, int);
+
+    funcPtr = add;  // function pointer
+
+    printf("Sum = %d\n", funcPtr(5, 3));
+
+    return 0;
+}
