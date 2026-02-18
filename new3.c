@@ -287,3 +287,58 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+void deleteFirst(struct Node **head) {
+    if (*head == NULL) {
+        printf("List is empty\n");
+        return;
+    }
+
+    struct Node *temp = *head;
+    *head = (*head)->next;
+    free(temp);
+}
+
+void display(struct Node *head) {
+    while(head != NULL) {
+        printf("%d -> ", head->data);
+        head = head->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    struct Node *head = NULL, *newNode, *temp;
+    int i;
+
+    // Create list
+    for(i = 1; i <= 3; i++) {
+        newNode = (struct Node*)malloc(sizeof(struct Node));
+        newNode->data = i * 10;
+        newNode->next = NULL;
+
+        if(head == NULL)
+            head = temp = newNode;
+        else {
+            temp->next = newNode;
+            temp = newNode;
+        }
+    }
+
+    printf("Before Deletion:\n");
+    display(head);
+
+    deleteFirst(&head);
+
+    printf("After Deleting First Node:\n");
+    display(head);
+
+    return 0;
+}
