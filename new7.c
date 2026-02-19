@@ -219,4 +219,50 @@ int main()
 
     return 0;
 }
+#include <stdio.h>
+
+int main()
+{
+    int arr[100], n, i, j, temp;
+    int *ptr;
+    int min_index;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    ptr = arr;   // pointer to first element
+
+    // Selection Sort using pointers
+    for(i = 0; i < n - 1; i++)
+    {
+        min_index = i;
+
+        for(j = i + 1; j < n; j++)
+        {
+            if(*(ptr + j) < *(ptr + min_index))
+            {
+                min_index = j;
+            }
+        }
+
+        // Swap using pointers
+        temp = *(ptr + i);
+        *(ptr + i) = *(ptr + min_index);
+        *(ptr + min_index) = temp;
+    }
+
+    printf("Sorted elements in ascending order:\n");
+    for(i = 0; i < n; i++)
+    {
+        printf("%d ", *(ptr + i));
+    }
+
+    return 0;
+}
 
