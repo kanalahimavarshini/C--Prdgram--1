@@ -91,3 +91,42 @@ int main()
 
     return 0;
 }
+    #include <stdio.h>
+
+int main()
+{
+    int arr[100], n, i, key;
+    int *ptr;
+    int found = 0;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter element to search: ");
+    scanf("%d", &key);
+
+    ptr = arr;   // pointer points to first element
+
+    for(i = 0; i < n; i++)
+    {
+        if(*(ptr + i) == key)
+        {
+            found = 1;
+            break;
+        }
+    }
+
+    if(found == 1)
+        printf("Element found at position %d", i + 1);
+    else
+        printf("Element not found");
+
+    return 0;
+}
+
