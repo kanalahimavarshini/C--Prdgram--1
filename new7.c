@@ -15,3 +15,38 @@ else{
 }
 return 0;
 }
+#include <stdio.h>
+
+// Function for Binary Search
+int binarySearch(int arr[], int n, int key)
+{
+    int low = 0, high = n - 1, mid;
+
+    while(low <= high)
+    {
+        mid = (low + high) / 2;
+
+        if(arr[mid] == key)
+        {
+            return mid;   // element found
+        }
+        else if(arr[mid] < key)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return -1;   // element not found
+}
+
+int main()
+{
+    int arr[100], n, i, key, result;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements (in sorted order
