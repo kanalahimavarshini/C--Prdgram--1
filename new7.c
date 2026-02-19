@@ -265,4 +265,45 @@ int main()
 
     return 0;
 }
+#include <stdio.h>
+
+int main()
+{
+    int arr[100], n, i, j, key;
+    int *ptr;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    ptr = arr;   // pointer to first element
+
+    // Insertion Sort using pointers
+    for(i = 1; i < n; i++)
+    {
+        key = *(ptr + i);
+        j = i - 1;
+
+        while(j >= 0 && *(ptr + j) > key)
+        {
+            *(ptr + j + 1) = *(ptr + j);
+            j--;
+        }
+
+        *(ptr + j + 1) = key;
+    }
+
+    printf("Sorted elements in ascending order:\n");
+    for(i = 0; i < n; i++)
+    {
+        printf("%d ", *(ptr + i));
+    }
+
+    return 0;
+}
 
