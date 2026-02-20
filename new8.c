@@ -178,3 +178,27 @@ int main()
 
     return 0;
 }
+#include <stdio.h>
+
+struct student
+{
+    int id;
+    float marks;
+};
+
+void display(struct student s)
+{
+    printf("ID = %d\n", s.id);
+    printf("Marks = %.2f\n", s.marks);
+}
+
+int main()
+{
+    struct student s1;
+
+    printf("Enter ID and Marks: ");
+    scanf("%d %f", &s1.id, &s1.marks);
+
+    display(s1);
+    return 0;
+}
