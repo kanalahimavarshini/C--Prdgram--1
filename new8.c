@@ -202,3 +202,26 @@ int main()
     display(s1);
     return 0;
 }
+#include <stdio.h>
+
+struct employee
+{
+    int id;
+    float salary;
+};
+
+int main()
+{
+    struct employee e;
+
+    printf("Enter Employee ID: ");
+    scanf("%d", &e.id);
+
+    printf("Enter Salary: ");
+    scanf("%f", &e.salary);
+
+    printf("\nEmployee Details:\n");
+    printf("ID = %d\nSalary = %.2f", e.id, e.salary);
+
+    return 0;
+}
