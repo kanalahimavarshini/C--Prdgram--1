@@ -225,3 +225,31 @@ int main()
 
     return 0;
 }
+#include <stdio.h>
+
+struct date
+{
+    int day, month, year;
+};
+
+struct student
+{
+    int id;
+    struct date dob;
+};
+
+int main()
+{
+    struct student s;
+
+    printf("Enter ID: ");
+    scanf("%d", &s.id);
+
+    printf("Enter DOB (dd mm yyyy): ");
+    scanf("%d %d %d", &s.dob.day, &s.dob.month, &s.dob.year);
+
+    printf("ID = %d\n", s.id);
+    printf("DOB = %d-%d-%d", s.dob.day, s.dob.month, s.dob.year);
+
+    return 0;
+}
