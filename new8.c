@@ -47,3 +47,33 @@ int main()
     printf("Largest = %d", largest(x, y));
     return 0;
 }
+#include <stdio.h>
+
+int linearSearch(int arr[], int n, int key)
+{
+    for(int i = 0; i < n; i++)
+        if(arr[i] == key)
+            return i;
+    return -1;
+}
+
+int main()
+{
+    int arr[5], key, pos;
+
+    printf("Enter 5 elements: ");
+    for(int i = 0; i < 5; i++)
+        scanf("%d", &arr[i]);
+
+    printf("Enter key: ");
+    scanf("%d", &key);
+
+    pos = linearSearch(arr, 5, key);
+
+    if(pos == -1)
+        printf("Not Found");
+    else
+        printf("Found at position %d", pos + 1);
+
+    return 0;
+}
