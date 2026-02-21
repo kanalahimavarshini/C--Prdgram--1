@@ -60,3 +60,41 @@ int main()
 
     return 0;
 }
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n, i;
+    int *arr;
+    int largest;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    arr = (int*)malloc(n * sizeof(int));
+
+    if(arr == NULL)
+    {
+        printf("Memory not allocated");
+        return 0;
+    }
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    largest = arr[0];
+
+    for(i = 1; i < n; i++)
+    {
+        if(arr[i] > largest)
+            largest = arr[i];
+    }
+
+    printf("Largest element = %d", largest);
+
+    free(arr);
+
+    return 0;
+}
