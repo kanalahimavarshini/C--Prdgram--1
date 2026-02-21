@@ -136,3 +136,28 @@ int main()
 
     return 0;
 }
+#include <stdio.h>
+
+int main()
+{
+    FILE *fp;
+    char text[100];
+
+    fp = fopen("data.txt", "w");
+
+    printf("Enter text: ");
+    scanf(" %[^\n]", text);
+
+    fprintf(fp, "%s", text);
+    fclose(fp);
+
+    fp = fopen("data.txt", "r");
+
+    fscanf(fp, " %[^\n]", text);
+
+    printf("File content: %s", text);
+
+    fclose(fp);
+
+    return 0;
+}
