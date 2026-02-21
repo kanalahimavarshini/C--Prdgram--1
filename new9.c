@@ -98,3 +98,41 @@ int main()
 
     return 0;
 }
+#include <stdio.h>
+
+struct student
+{
+    int id;
+    char name[50];
+    float marks;
+};
+
+int main()
+{
+    struct student s[3];
+    int i;
+
+    for(i = 0; i < 3; i++)
+    {
+        printf("\nEnter Student %d Details\n", i+1);
+        printf("ID: ");
+        scanf("%d", &s[i].id);
+
+        printf("Name: ");
+        scanf("%s", s[i].name);
+
+        printf("Marks: ");
+        scanf("%f", &s[i].marks);
+    }
+
+    printf("\nStudent Details:\n");
+
+    for(i = 0; i < 3; i++)
+    {
+        printf("\nID: %d", s[i].id);
+        printf("\nName: %s", s[i].name);
+        printf("\nMarks: %.2f\n", s[i].marks);
+    }
+
+    return 0;
+}
