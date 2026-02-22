@@ -81,3 +81,52 @@ int main()
 
     return 0;
 }
+#include <stdio.h>
+
+#define MAX 5
+
+int queue[MAX];
+int front = -1, rear = -1;
+
+void enqueue(int value)
+{
+    if(rear == MAX - 1)
+        printf("Queue Full\n");
+    else
+    {
+        if(front == -1)
+            front = 0;
+
+        queue[++rear] = value;
+    }
+}
+
+void dequeue()
+{
+    if(front == -1 || front > rear)
+        printf("Queue Empty\n");
+    else
+        front++;
+}
+
+void display()
+{
+    int i;
+    for(i = front; i <= rear; i++)
+        printf("%d ", queue[i]);
+}
+
+int main()
+{
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+
+    display();
+
+    dequeue();
+    printf("\nAfter dequeue:\n");
+    display();
+
+    return 0;
+}
