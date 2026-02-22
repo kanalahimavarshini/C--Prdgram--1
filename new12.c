@@ -38,4 +38,46 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
 
+#define MAX 5
+
+int stack[MAX];
+int top = -1;
+
+void push(int value)
+{
+    if(top == MAX - 1)
+        printf("Overflow\n");
+    else
+        stack[++top] = value;
+}
+
+void pop()
+{
+    if(top == -1)
+        printf("Underflow\n");
+    else
+        top--;
+}
+
+void display()
+{
+    int i;
+    for(i = top; i >= 0; i--)
+        printf("%d\n", stack[i]);
+}
+
+int main()
+{
+    push(10);
+    push(20);
+    push(30);
+    display();
+
+    pop();
+    printf("After pop:\n");
+    display();
+
+    return 0;
+}
