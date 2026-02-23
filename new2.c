@@ -207,3 +207,19 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int arr[5], i, sum = 0;
+    int *ptr = arr;
+
+    printf("Enter 5 elements:\n");
+    for(i = 0; i < 5; i++) {
+        scanf("%d", ptr + i);
+        sum += *(ptr + i);
+    }
+
+    printf("Sum = %d", sum);
+
+    return 0;
+}
