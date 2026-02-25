@@ -105,3 +105,36 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int n, i;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    int *ptr = arr;
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", ptr + i);
+    }
+
+    int largest = *ptr;
+    int second = -99999;
+
+    for(i = 1; i < n; i++) {
+        if(*(ptr + i) > largest) {
+            second = largest;
+            largest = *(ptr + i);
+        }
+        else if(*(ptr + i) > second && *(ptr + i) != largest) {
+            second = *(ptr + i);
+        }
+    }
+
+    printf("Second largest = %d", second);
+
+    return 0;
+}
