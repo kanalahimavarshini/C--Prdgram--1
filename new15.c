@@ -138,3 +138,40 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int n1, n2, i;
+
+    printf("Enter size of first array: ");
+    scanf("%d", &n1);
+
+    printf("Enter size of second array: ");
+    scanf("%d", &n2);
+
+    int arr1[n1], arr2[n2], arr3[n1 + n2];
+
+    int *p1 = arr1;
+    int *p2 = arr2;
+    int *p3 = arr3;
+
+    printf("Enter first array:\n");
+    for(i = 0; i < n1; i++)
+        scanf("%d", p1 + i);
+
+    printf("Enter second array:\n");
+    for(i = 0; i < n2; i++)
+        scanf("%d", p2 + i);
+
+    for(i = 0; i < n1; i++)
+        *(p3 + i) = *(p1 + i);
+
+    for(i = 0; i < n2; i++)
+        *(p3 + n1 + i) = *(p2 + i);
+
+    printf("Merged array:\n");
+    for(i = 0; i < n1 + n2; i++)
+        printf("%d ", *(p3 + i));
+
+    return 0;
+}
