@@ -1,11 +1,4 @@
-#include <stdio.h>
-int main(){
-int x;
-printf("enter a number:");
-scanf("%d,&x");
-printf("%d",x%2==0);
-return 0;
-}
+
 
 #include <stdio.h>
 int main(){
@@ -181,4 +174,12 @@ int main()
         printf("%d ", arr[i]);
 
     return 0;
+}
+#include <stdio.h>
+int main(){
+int x;
+printf("enter a number:");
+scanf("%d,&x");
+printf("%d",x%5==0);
+return 0;
 }
