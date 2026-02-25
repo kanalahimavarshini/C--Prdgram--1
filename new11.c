@@ -146,7 +146,7 @@ int main()
 #include <stdio.h>
 
 int main()
-{
+{}
     int arr[100], n, i, j, key;
 
     printf("Enter number of elements: ");
@@ -219,4 +219,13 @@ int main()
     printf("Element not found");
     return 0;
 }
+#include <stdio.h>
+int main(){
+int x;
+printf("enter a number:");
+scanf("%d,&x");
+printf("%d",x%7==0);
+return 0;
+}
+
 
