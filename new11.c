@@ -227,5 +227,14 @@ scanf("%d,&x");
 printf("%d",x%7==0);
 return 0;
 }
+#include <stdio.h>
+int main(){
+int x;
+printf("enter a number:");
+scanf("%d,&x");
+printf("%d",x%9==0);
+return 0;
+}
+
 
 
