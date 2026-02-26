@@ -275,4 +275,12 @@ scanf("%d,&x");
 printf("%d",x%26==0);
 return 0;
 }
+#include <stdio.h>
+int main(){
+int x;
+printf("enter a number:");
+scanf("%d,&x");
+printf("%d",x%14==0);
+return 0;
+}
 
