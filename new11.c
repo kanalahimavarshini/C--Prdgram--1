@@ -315,3 +315,19 @@ scanf("%d,&x");
 printf("%d",x%76==0);
 return 0;
 }
+#include <stdio.h>
+int main(){
+int x;
+printf("enter a number:");
+scanf("%d,&x");
+printf("%d",x%86==0);
+return 0;
+}
+#include <stdio.h>
+int main(){
+int x;
+printf("enter a number:");
+scanf("%d,&x");
+printf("%d",x%76==0);
+return 0;
+}
