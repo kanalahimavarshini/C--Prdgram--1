@@ -232,3 +232,25 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int arr[] = {0,1,0,3,12,15};
+    int n = 6;
+
+    int left = 0;
+
+    for(int right=0; right<n; right++) {
+        if(arr[right] != 0) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+        }
+    }
+
+    for(int i=0;i<n;i++)
+        printf("%d ", arr[i]);
+
+    return 0;
+}
