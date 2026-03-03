@@ -162,3 +162,19 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+void changeValue(int **pp) {
+    **pp = 100;
+}
+
+int main() {
+    int x = 20;
+    int *p = &x;
+
+    changeValue(&p);
+
+    printf("Updated value = %d", x);
+
+    return 0;
+}
