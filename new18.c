@@ -232,3 +232,24 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+void swap(int **a, int **b) {
+    int *temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int x = 20, y = 40;
+    int *p1 = &x;
+    int *p2 = &y;
+
+    swap(&p1, &p2);
+
+    printf("After swap:\n");
+    printf("p1 points to %d\n", *p1);
+    printf("p2 points to %d\n", *p2);
+
+    return 0;
+}
