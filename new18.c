@@ -199,3 +199,36 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int i, j, rows = 2, cols = 3;
+
+    int **arr;
+
+    arr = (int **)malloc(rows * sizeof(int *));
+
+    for(i = 0; i < rows; i++)
+        arr[i] = (int *)malloc(cols * sizeof(int));
+
+    printf("Enter elements:\n");
+    for(i = 0; i < rows; i++)
+        for(j = 0; j < cols; j++)
+            scanf("%d", &arr[i][j]);
+
+    printf("Matrix:\n");
+    for(i = 0; i < rows; i++) {
+        for(j = 0; j < cols; j++)
+            printf("%d ", arr[i][j]);
+        printf("\n");
+    }
+
+    // Free memory
+    for(i = 0; i < rows; i++)
+        free(arr[i]);
+
+    free(arr);
+
+    return 0;
+}
