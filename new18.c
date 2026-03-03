@@ -149,3 +149,16 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int x = 50;
+    int *p = &x;
+    int **pp = &p;
+
+    printf("Value of x = %d\n", x);
+    printf("Using p = %d\n", *p);
+    printf("Using pp = %d\n", **pp);
+
+    return 0;
+}
