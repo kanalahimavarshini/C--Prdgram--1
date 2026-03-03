@@ -83,3 +83,33 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int findMax(int *arr, int n) {
+    int i, max = *arr;
+
+    for(i = 1; i < n; i++) {
+        if(*(arr + i) > max)
+            max = *(arr + i);
+    }
+    return max;
+}
+
+int main() {
+    int n, i;
+
+    printf("Enter size: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    int max = findMax(arr, n);
+
+    printf("Maximum element = %d", max);
+
+    return 0;
+}
