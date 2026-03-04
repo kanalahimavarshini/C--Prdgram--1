@@ -260,12 +260,12 @@ int main() {
 #include <stdio.h>
 
 int main() {
-    int arr[6];
+    int arr[8];
     int i, count = 0;
 
-    printf("Enter 6 integers:\n");
+    printf("Enter 8 integers:\n");
 
-    for(i = 0; i < 6; i++) {
+    for(i = 0; i < 8 ; i++) {
         scanf("%d", &arr[i]);
         count++;
     }
