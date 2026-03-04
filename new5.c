@@ -328,12 +328,12 @@ int main() {
 #include <stdio.h>
 
 int main() {
-    int arr[10];
+    int arr[12];
     int i, count = 0;
 
-    printf("Enter 10 integers:\n");
+    printf("Enter 12 integers:\n");
 
-    for(i = 0; i < 10 ; i++) {
+    for(i = 0; i < 12 ; i++) {
         scanf("%d", &arr[i]);
         count++;
     }
