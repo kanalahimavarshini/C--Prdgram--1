@@ -308,3 +308,37 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int arr[11];
+    int i, count = 0;
+
+    printf("Enter 11 integers:\n");
+
+    for(i = 0; i < 11 ; i++) {
+        scanf("%d", &arr[i]);
+        count++;
+    }
+
+    printf("Total integers entered = %d\n", count);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int arr[10];
+    int i, count = 0;
+
+    printf("Enter 10 integers:\n");
+
+    for(i = 0; i < 10 ; i++) {
+        scanf("%d", &arr[i]);
+        count++;
+    }
+
+    printf("Total integers entered = %d\n", count);
+
+    return 0;
+}
