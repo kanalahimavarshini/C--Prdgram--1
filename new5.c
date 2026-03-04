@@ -294,12 +294,12 @@ int main() {
 #include <stdio.h>
 
 int main() {
-    int arr[8];
+    int arr[10];
     int i, count = 0;
 
-    printf("Enter 8 integers:\n");
+    printf("Enter 10 integers:\n");
 
-    for(i = 0; i < 8 ; i++) {
+    for(i = 0; i < 10 ; i++) {
         scanf("%d", &arr[i]);
         count++;
     }
