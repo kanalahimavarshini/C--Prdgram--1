@@ -274,3 +274,37 @@ int main() {
 
     return 0;
 }
+#include <stdio.h>
+
+int main() {
+    int arr[9];
+    int i, count = 0;
+
+    printf("Enter 9 integers:\n");
+
+    for(i = 0; i < 9 ; i++) {
+        scanf("%d", &arr[i]);
+        count++;
+    }
+
+    printf("Total integers entered = %d\n", count);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    int arr[8];
+    int i, count = 0;
+
+    printf("Enter 8 integers:\n");
+
+    for(i = 0; i < 8 ; i++) {
+        scanf("%d", &arr[i]);
+        count++;
+    }
+
+    printf("Total integers entered = %d\n", count);
+
+    return 0;
+}
